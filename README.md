@@ -1,122 +1,176 @@
-# Marlin 3D Printer Firmware 
+<!-- PROJECT SHIELDS -->
+<!--
+*** I'm using markdown "reference style" links for readability.
+*** Reference links are enclosed in brackets [ ] instead of parentheses ( ).
+*** See the bottom of this document for the declaration of the reference variables
+*** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use.
+*** https://www.markdownguide.org/basic-syntax/#reference-style-links
+-->
+[![Contributors][contributors-shield]][contributors-url]
+[![Forks][forks-shield]][forks-url]
+[![Stargazers][stars-shield]][stars-url]
+[![Issues][issues-shield]][issues-url]
+[![MIT License][license-shield]][license-url]
+[![LinkedIn][linkedin-shield]][linkedin-url]
 
-![GitHub](https://img.shields.io/github/license/marlinfirmware/marlin.svg)
-![GitHub contributors](https://img.shields.io/github/contributors/marlinfirmware/marlin.svg)
-![GitHub Release Date](https://img.shields.io/github/release-date/marlinfirmware/marlin.svg)
-[![Build Status](https://github.com/MarlinFirmware/Marlin/workflows/CI/badge.svg?branch=bugfix-2.0.x)](https://github.com/MarlinFirmware/Marlin/actions)
-
-<img align="right" width=175 src="buildroot/share/pixmaps/logo/marlin-250.png" />
-
-Please Download Marlin Bugfix 2.0 from Marlins Github here https://github.com/MarlinFirmware/Marlin/archive/bugfix-2.0.x.zip
-Then use my Configuration.h and Configuration_Adv.h if you would like to follow along with my tutorial.
 
 
-Additional documentation can be found at the [Marlin Home Page](http://marlinfw.org/).
-Please test this firmware and let us know if it misbehaves in any way. Volunteers are standing by!
+<!-- PROJECT LOGO -->
+<br />
+<p align="center">
+  <a href="https://github.com/temeyers/FFCP-Marlin-Public">
+    <img src="images/logo.png" alt="Logo" width="80" height="80">
+  </a>
 
-## Marlin 2.0 Bugfix Branch
+  <h3 align="center">FFCP-Marlin-Public</h3>
 
-__Not for production use. Use with caution!__
+  <p align="center">
+    Guide with files and firmware to modify the Flashforge Creator Pro to use a Dragon Hotend, BMG Extruder, and SKR 1.4 Turbo with BLTouch. 
+    <br />
+    <a href="https://github.com/temeyers/FFCP-Marlin-Public"><strong>Explore the docs »</strong></a>
+    <br />
+    <br />
+    <a href="https://github.com/temeyers/FFCP-Marlin-Public/issues">Report Bug</a>
+    ·
+    <a href="https://github.com/temeyers/FFCP-Marlin-Public/issues">Request Feature</a>
+  </p>
+</p>
 
-Marlin 2.0 takes this popular RepRap firmware to the next level by adding support for much faster 32-bit and ARM-based boards while improving support for 8-bit AVR boards. Read about Marlin's decision to use a "Hardware Abstraction Layer" below.
 
-This branch is for patches to the latest 2.0.x release version. Periodically this branch will form the basis for the next minor 2.0.x release.
 
-Download earlier versions of Marlin on the [Releases page](https://github.com/MarlinFirmware/Marlin/releases).
+<!-- TABLE OF CONTENTS -->
+## Table of Contents
 
-## Building Marlin 2.0
+* [About the Project](#about-the-project)
+  * [Built With](#built-with)
+* [Getting Started](#getting-started)
+  * [Prerequisites](#prerequisites)
+  * [Installation](#installation)
+* [Usage](#usage)
+* [Roadmap](#roadmap)
+* [Contributing](#contributing)
+* [License](#license)
+* [Contact](#contact)
+* [Acknowledgements](#acknowledgements)
 
-To build Marlin 2.0 you'll need [Arduino IDE 1.8.8 or newer](https://www.arduino.cc/en/main/software) or [PlatformIO](http://docs.platformio.org/en/latest/ide.html#platformio-ide). We've posted detailed instructions on [Building Marlin with Arduino](http://marlinfw.org/docs/basics/install_arduino.html) and [Building Marlin with PlatformIO for ReArm](http://marlinfw.org/docs/basics/install_rearm.html) (which applies well to other 32-bit boards).
 
-## Hardware Abstraction Layer (HAL)
 
-Marlin 2.0 introduces a layer of abstraction so that all the existing high-level code can be built for 32-bit platforms while still retaining full 8-bit AVR compatibility. Retaining AVR compatibility and a single code-base is important to us, because we want to make sure that features and patches get as much testing and attention as possible, and that all platforms always benefit from the latest improvements.
+<!-- ABOUT THE PROJECT -->
+## About The Project
 
-### Current HALs
+[![Product Name Screen Shot][product-screenshot]](https://example.com)
 
-  #### AVR (8-bit)
+To get Started please download all needed print files and proceed to Prerequisites:
 
-  board|processor|speed|flash|sram|logic|fpu
-  ----|---------|-----|-----|----|-----|---
-  [Arduino AVR](https://www.arduino.cc/)|ATmega, ATTiny, etc.|16-20MHz|64-256k|2-16k|5V|no
 
-  #### DUE
 
-  boards|processor|speed|flash|sram|logic|fpu
-  ----|---------|-----|-----|----|-----|---
-  [Arduino Due](https://www.arduino.cc/en/Guide/ArduinoDue), [RAMPS-FD](http://www.reprap.org/wiki/RAMPS-FD), etc.|[SAM3X8E ARM-Cortex M3](http://www.microchip.com/wwwproducts/en/ATsam3x8e)|84MHz|512k|64+32k|3.3V|no
+### Built With
 
-  #### ESP32
+* Visual Studio Code
+* Platform.io
+* Marlin 2.x Builds
+* Shapr3D for iOS 
 
-  board|processor|speed|flash|sram|logic|fpu
-  ----|---------|-----|-----|----|-----|---
-  [ESP32](https://www.espressif.com/en/products/hardware/esp32/overview)|Tensilica Xtensa LX6|240MHz|---|---|3.3V|---
 
-  #### LPC1768 / LPC1769
 
-  boards|processor|speed|flash|sram|logic|fpu
-  ----|---------|-----|-----|----|-----|---
-  [Re-ARM](https://www.kickstarter.com/projects/1245051645/re-arm-for-ramps-simple-32-bit-upgrade)|[LPC1768 ARM-Cortex M3](http://www.nxp.com/products/microcontrollers-and-processors/arm-based-processors-and-mcus/lpc-cortex-m-mcus/lpc1700-cortex-m3/512kb-flash-64kb-sram-ethernet-usb-lqfp100-package:LPC1768FBD100)|100MHz|512k|32+16+16k|3.3-5V|no
-  [MKS SBASE](http://forums.reprap.org/read.php?13,499322)|LPC1768 ARM-Cortex M3|100MHz|512k|32+16+16k|3.3-5V|no
-  [Selena Compact](https://github.com/Ales2-k/Selena)|LPC1768 ARM-Cortex M3|100MHz|512k|32+16+16k|3.3-5V|no
-  [Azteeg X5 GT](https://www.panucatt.com/azteeg_X5_GT_reprap_3d_printer_controller_p/ax5gt.htm)|LPC1769 ARM-Cortex M3|120MHz|512k|32+16+16k|3.3-5V|no
-  [Smoothieboard](http://reprap.org/wiki/Smoothieboard)|LPC1769 ARM-Cortex M3|120MHz|512k|64k|3.3-5V|no
+<!-- GETTING STARTED -->
+## Getting Started
 
-  #### SAMD51
+First get a local copy of Marlin up and running following these simple steps.
+### STOP 
 
-  boards|processor|speed|flash|sram|logic|fpu
-  ----|---------|-----|-----|----|-----|---
-  [Adafruit Grand Central M4](https://www.adafruit.com/product/4064)|[SAMD51P20A ARM-Cortex M4](https://www.microchip.com/wwwproducts/en/ATSAMD51P20A)|120MHz|1M|256k|3.3V|yes
+* If you need assistance with prerequisites it is best advised you cease this project now seek further education on basic Arduino or Marlin style code or Skip ahead to the "I am not sure what I am doing" section below. 	
 
-  #### STM32F1
+### Prerequisites
 
-  boards|processor|speed|flash|sram|logic|fpu
-  ----|---------|-----|-----|----|-----|---
-  [Arduino STM32](https://github.com/rogerclarkmelbourne/Arduino_STM32)|[STM32F1](https://www.st.com/en/microcontrollers-microprocessors/stm32f103.html) ARM-Cortex M3|72MHz|256-512k|48-64k|3.3V|no
-  [STEVAL-3DP001V1](http://www.st.com/en/evaluation-tools/steval-3dp001v1.html)|[STM32F401VE Arm-Cortex M4](http://www.st.com/en/microcontrollers/stm32f401ve.html)|84MHz|512k|64+32k|3.3-5V|yes
+This is an example of how to list things you need to use the software and how to install them.
+* Install Visual Studio Code 
+	[Install VS-Code](https://ninite.com/vscode/ninite.exe)
+* Install Platform.io
+	[Link to Guide](https://marlinfw.org/docs/basics/install_platformio_vscode.html)
+* Download the GitHub Repo and save to a safe known location
+	[Download Repo](https://github.com/temeyers/DCP-Marlin-Private/archive/master.zip)
 
-  #### Teensy++ 2.0
+### Installation
+ 
+1. Open repo in Visual Studio Code with Platform.io plugin installed. 
+2. Make desired changes 
+3. Build 
 
-  boards|processor|speed|flash|sram|logic|fpu
-  ----|---------|-----|-----|----|-----|---
-  [Teensy++ 2.0](http://www.microchip.com/wwwproducts/en/AT90USB1286)|[AT90USB1286](http://www.microchip.com/wwwproducts/en/AT90USB1286)|16MHz|128k|8k|5V|no
 
-  #### Teensy 3.1 / 3.2
 
-  boards|processor|speed|flash|sram|logic|fpu
-  ----|---------|-----|-----|----|-----|---
-  [Teensy 3.2](https://www.pjrc.com/store/teensy32.html)|[MK20DX256VLH7](https://www.mouser.com/ProductDetail/NXP-Freescale/MK20DX256VLH7) ARM-Cortex M4|72MHz|256k|32k|3.3V-5V|yes
 
-  #### Teensy 3.5 / 3.6
+<!-- USAGE EXAMPLES -->
+## Usage
 
-  boards|processor|speed|flash|sram|logic|fpu
-  ----|---------|-----|-----|----|-----|---
-  [Teensy 3.5](https://www.pjrc.com/store/teensy35.html)|[MK64FX512VMD12](https://www.mouser.com/ProductDetail/NXP-Freescale/MK64FX512VMD12) ARM-Cortex M4|120MHz|512k|192k|3.3-5V|yes
-  [Teensy 3.6](https://www.pjrc.com/store/teensy36.html)|[MK66FX1M0VMD18](https://www.mouser.com/ProductDetail/NXP-Freescale/MK66FX1M0VMD18) ARM-Cortex M4|180MHz|1M|256k|3.3V|yes
+_For more support, please refer to the Group on [Facebook](https://facebook.com/groups/1328970737287751/?ref=share)_
 
-## Submitting Patches
 
-Proposed patches should be submitted as a Pull Request against the ([bugfix-2.0.x](https://github.com/MarlinFirmware/Marlin/tree/bugfix-2.0.x)) branch.
 
-- This branch is for fixing bugs and integrating any new features for the duration of the Marlin 2.0.x life-cycle.
-- Follow the [Coding Standards](http://marlinfw.org/docs/development/coding_standards.html) to gain points with the maintainers.
-- Please submit your questions and concerns to the [Issue Queue](https://github.com/MarlinFirmware/Marlin/issues).
+<!-- ROADMAP -->
+## Roadmap
 
-### [RepRap.org Wiki Page](http://reprap.org/wiki/Marlin)
+* See the [Projects section](https://github.com/temeyers/FFCP-Marlin-Public/projects/1) for a list of proposed features.
+* See the [Issues](https://github.com/temeyers/DCP-Marlin-Private/issues) for a list of known bugs or to report them. 
 
-## Credits
+* Please do not hessitate to submit feature requests or bug reports. 
 
-The current Marlin dev team consists of:
 
- - Scott Lahteine [[@thinkyhead](https://github.com/thinkyhead)] - USA &nbsp; [Donate](http://www.thinkyhead.com/donate-to-marlin) / Flattr: [![Flattr Scott](http://api.flattr.com/button/flattr-badge-small.png)](https://flattr.com/submit/auto?user_id=thinkyhead&url=https://github.com/MarlinFirmware/Marlin&title=Marlin&language=&tags=github&category=software)
- - Roxanne Neufeld [[@Roxy-3D](https://github.com/Roxy-3D)] - USA
- - Chris Pepper [[@p3p](https://github.com/p3p)] - UK
- - Bob Kuhn [[@Bob-the-Kuhn](https://github.com/Bob-the-Kuhn)] - USA
- - João Brazio [[@jbrazio](https://github.com/jbrazio)] - Portugal
- - Erik van der Zalm [[@ErikZalm](https://github.com/ErikZalm)] - Netherlands &nbsp; [![Flattr Erik](http://api.flattr.com/button/flattr-badge-large.png)](https://flattr.com/submit/auto?user_id=ErikZalm&url=https://github.com/MarlinFirmware/Marlin&title=Marlin&language=&tags=github&category=software)
 
+<!-- CONTRIBUTING -->
+## Contributing
+
+Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are **Greatly Appreciated !**.
+
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+
+
+<!-- LICENSE -->
 ## License
 
-Marlin is published under the [GPL license](/LICENSE) because we believe in open development. The GPL comes with both rights and obligations. Whether you use Marlin firmware as the driver for your open or closed-source product, you must keep Marlin open, and you must provide your compatible Marlin source code to end users upon request. The most straightforward way to comply with the Marlin license is to make a fork of Marlin on Github, perform your modifications, and direct users to your modified fork.
+Distributed under the GPL-3.0 License. See `LICENSE` for more information.
 
-While we can't prevent the use of this code in products (3D printers, CNC, etc.) that are closed source or crippled by a patent, we would prefer that you choose another firmware or, better yet, make your own.
+
+
+<!-- CONTACT -->
+## Contact
+ 
+* Terry Meyers 
+* Twitter - [@temeyers](https://twitter.com/temeyers) 
+* Email - [Gmail](mailto:temeyers@gmail.com)
+
+Project Link: [https://github.com/temeyers/FFCP-Marlin-Public](https://github.com/temeyers/FFCP-Marlin-Public)
+
+
+
+<!-- ACKNOWLEDGEMENTS -->
+## Acknowledgements
+
+* [Marlin Firmware](http://marlinfw.org/) 
+* [Shapr3D](http://Shapr3D.com/)
+* [BigTree-Tech](http://www.bigtree-tech.com/)
+
+
+
+
+
+<!-- MARKDOWN LINKS & IMAGES -->
+<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
+[contributors-shield]: https://img.shields.io/github/contributors/temeyers/FFCP-Marlin-Public.svg?style=flat-square
+[contributors-url]: https://github.com/temeyers/FFCP-Marlin-Public/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/temeyers/FFCP-Marlin-Public.svg?style=flat-square
+[forks-url]: https://github.com/temeyers/FFCP-Marlin-Public/network/members
+[stars-shield]: https://img.shields.io/github/stars/temeyers/FFCP-Marlin-Public.svg?style=flat-square
+[stars-url]: https://github.com/temeyers/FFCP-Marlin-Public/stargazers
+[issues-shield]: https://img.shields.io/github/issues/temeyers/FFCP-Marlin-Public.svg?style=flat-square
+[issues-url]: https://github.com/temeyers/FFCP-Marlin-Public/issues
+[license-shield]: https://img.shields.io/github/license/temeyers/FFCP-Marlin-Public.svg?style=flat-square
+[license-url]: https://github.com/temeyers/FFCP-Marlin-Public/blob/master/LICENSE.txt
+[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=flat-square&logo=linkedin&colorB=555
+[linkedin-url]: https://linkedin.com/in/temeyers
+[product-screenshot]: images/screenshot.png
